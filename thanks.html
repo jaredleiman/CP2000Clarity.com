@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Got it — Your CP2000 Clarity Report is on its way</title>
+<meta name="description" content="Your CP2000 notice is being analyzed. Your Clarity Report will arrive by email in about ten minutes.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:            #00152a;
+    --ink-2:          #102a43;
+    --paper:          #f6fafe;
+    --paper-2:        #f0f4f8;
+    --on-ink:         #ffffff;
+    --on-ink-dim:     #b0c9e8;
+    --on-paper:       #171c1f;
+    --on-paper-dim:   #43474d;
+    --gold:           #e6c275;
+    --gold-2:         #ab8b44;
+    --rule-soft:      #dfe3e7;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--on-ink);
+    background: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(176, 201, 232, 0.12), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 90%, rgba(230, 194, 117, 0.08), transparent 55%),
+      linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+    z-index: 0;
+  }
+
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(176, 201, 232, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(176, 201, 232, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    z-index: 1;
+    opacity: 0.6;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .topbar {
+    position: relative; z-index: 10;
+    padding: 24px 32px;
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .brand {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--on-ink);
+    text-decoration: none;
+  }
+  .brand em { font-style: italic; font-weight: 500; color: var(--gold); }
+
+  main {
+    position: relative; z-index: 10;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px 80px;
+  }
+
+  .confirm {
+    max-width: 680px;
+    text-align: center;
+  }
+
+  .mark {
+    width: 64px; height: 64px;
+    margin: 0 auto 32px;
+    border: 1px solid rgba(230, 194, 117, 0.45);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: clamp(32px, 4.8vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin: 0 0 20px;
+    color: var(--on-ink);
+  }
+  h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+
+  .lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--on-ink-dim);
+    margin: 0 auto 40px;
+    max-width: 520px;
+  }
+
+  .timeline {
+    border: 1px solid rgba(176, 201, 232, 0.15);
+    border-radius: 4px;
+    padding: 28px 32px;
+    text-align: left;
+    background: rgba(16, 42, 67, 0.35);
+    margin-bottom: 40px;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(176, 201, 232, 0.08);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-time {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold);
+    font-size: 15px;
+    min-width: 110px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  .timeline-text {
+    color: var(--on-ink-dim);
+    font-size: 15px;
+  }
+  .timeline-text strong { color: var(--on-ink); font-weight: 500; }
+
+  .note {
+    font-size: 14px;
+    color: var(--on-ink-dim);
+    margin: 0 auto 28px;
+    max-width: 520px;
+    line-height: 1.55;
+  }
+  .note strong { color: var(--on-ink); font-weight: 500; }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--on-ink-dim);
+    text-decoration: none;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(176, 201, 232, 0.25);
+    border-radius: 2px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .cta:hover {
+    background: rgba(176, 201, 232, 0.06);
+    border-color: rgba(176, 201, 232, 0.4);
+    color: var(--on-ink);
+  }
+
+  footer {
+    position: relative; z-index: 10;
+    padding: 28px 32px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(176, 201, 232, 0.55);
+    border-top: 1px solid rgba(176, 201, 232, 0.08);
+  }
+  footer a { color: rgba(176, 201, 232, 0.75); text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .timeline { padding: 20px 22px; }
+    .timeline-item { flex-direction: column; gap: 4px; }
+    .timeline-time { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/" class="brand">CP2000<em>Clarity</em></a>
+</div>
+
+<main>
+  <div class="confirm">
+    <div class="mark">✓</div>
+    <div class="eyebrow">Submission Received</div>
+    <h1>Got it. <em>Your report is being prepared.</em></h1>
+    <p class="lede">Your CP2000 notice has been submitted for analysis. Your Clarity Report will arrive at the email address you provided in about ten minutes.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">Right now</div>
+        <div class="timeline-text">Your notice is being analyzed. <strong>You don't need to do anything.</strong></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">~10 minutes</div>
+        <div class="timeline-text">Your Clarity Report lands in your inbox from <strong>hello@cp2000clarity.com</strong>.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">If not received</div>
+        <div class="timeline-text">Check your <strong>spam and promotions folders</strong> first. If still missing after an hour, reply to your Stripe receipt and we'll look into it.</div>
+      </div>
+    </div>
+
+    <p class="note">It's normal to feel a little anxious right now. When the report arrives, read it through once without taking notes — it's designed to be calming and explanatory first, action-oriented second. You have time.</p>
+
+    <a href="/" class="cta">← Return to cp2000clarity.com</a>
+  </div>
+</main>
+
+<footer>
+  Educational document analysis only. Not tax advice. <a href="/">cp2000clarity.com</a>
+</footer>
+
+</body>
+</html>
